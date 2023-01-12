@@ -15,10 +15,6 @@ export class SliderComponent {
   private slider: HTMLElement;
   private touchBehaviour: TouchSlideBehaviour;
 
-  componentWillLoad() {
-    console.log('Will load');
-  }
-
   updateIndex(index: number) {
     this.currentSlideNumber = index;
     this.touchBehaviour.updateIndex(index);

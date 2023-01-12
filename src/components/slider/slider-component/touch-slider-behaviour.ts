@@ -36,23 +36,19 @@ export class TouchSlideBehaviour {
         this.notifyOnIndexChange(index);
 
         this.startPos = evet.clientX;
-        console.log('StartPos', this.startPos);
 
         this.isDragging = true;
         this.sliderContainer.classList.add('grabbing');
         this.animationID = requestAnimationFrame(this.animation.bind(this));
       });
       slide.addEventListener('pointerup', () => {
-        console.log('Pointerup at poiterup');
         this.pointerUp();
       });
       slide.addEventListener('pointerleave', () => {
-        console.log('Pointerup at pointerleave');
         this.pointerUp();
       });
 
       slide.addEventListener('pointermove', (e: PointerEvent) => {
-        console.log('PointerMove called');
         this.pointerMove(e);
       });
     });
@@ -74,8 +70,6 @@ export class TouchSlideBehaviour {
 
   private pointerMove(event: PointerEvent) {
     if (this.isDragging) {
-      console.log('Is dragging');
-
       const currentPosition = event.clientX;
       this.currentTranslate = this.prevTranslate + currentPosition - this.startPos;
     }
@@ -85,9 +79,6 @@ export class TouchSlideBehaviour {
     cancelAnimationFrame(this.animationID);
     this.isDragging = false;
     const movedBy = this.currentTranslate - this.prevTranslate;
-
-    console.log(`MovedBy ${movedBy}, PrevTranslate: ${this.prevTranslate},CurrentTranslate: ${this.currentTranslate}`);
-
     // if moved enough negative then snap to next slide if there is one
     if (movedBy < -100 && this.currentIndex < this.slides.length - 1) {
       this.currentIndex += 1;
@@ -107,8 +98,6 @@ export class TouchSlideBehaviour {
       const currentIndexedPosition = 100 * indx;
 
       const translate = `translateX(${this.currentTranslate + currentIndexedPosition}%)`;
-
-      console.log(translate);
 
       slide.style.transform = translate;
     });
