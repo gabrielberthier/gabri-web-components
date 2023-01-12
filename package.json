@@ -12,11 +12,12 @@
   "unpkg": "dist/webcomp-carousel/webcomp-carousel.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/gabrielberthier/gabri-web-components"
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "global/"
   ],
   "scripts": {
     "build": "stencil build --docs",
