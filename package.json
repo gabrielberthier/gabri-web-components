@@ -1,5 +1,5 @@
 {
-  "name": "webcomp-carousel",
+  "name": "@gabseu/webcomp-carousel",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -16,11 +16,11 @@
   },
   "files": [
     "dist/",
-    "loader/",
-    "global/"
+    "loader/"
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "prepublish": "npm run build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
