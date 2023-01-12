@@ -1,0 +1,21 @@
+:host {
+  padding: 5px;
+}
+
+:host>div.container-slide>.slider {
+  max-width: 800px;
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  /* <===  */
+  border-radius: 15px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+:host>div {
+  position: relative;
+
+}
